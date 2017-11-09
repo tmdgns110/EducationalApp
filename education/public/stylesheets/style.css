@@ -1,0 +1,209 @@
+/*body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}*/
+
+* {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  height: 100%;
+  width: 100%;
+}
+
+.screen {
+  width: 450px;
+  height: 680px;
+  background: url(http://johnnycotton.me/codepen/001/bg.jpg) center center;
+  margin: 40px auto;
+  position: relative;
+}
+
+#screen-right {
+  background: white;
+  height: 800px;
+  width: 450px;
+  position: absolute;
+  margin-top: -100px;
+  left: -100%;
+  z-index: 9999;
+}
+
+#screen-left {
+  background: white;
+  height: 800px;
+  width: 450px;
+  position: absolute;
+  margin-top: -100px;
+  right: -100%;
+  z-index: 9999;
+}
+
+.screen-overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  opacity: 0.7;
+  background: linear-gradient(
+    135deg,
+    rgba(72, 35, 166, 1) 0%,
+    rgba(44, 0, 165, 1) 99%
+  );
+}
+
+.container {
+  padding: 90px 60px 45px 60px;
+}
+
+.main {
+  position: relative;
+  width: 100%;
+}
+
+.forgot {
+  border-top: 1px solid white;
+  text-align: center;
+  margin-top: 80px;
+}
+
+li,
+h2,
+h3 {
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+h2 {
+  padding: 15px 5px;
+}
+h3 {
+  display: inline-block;
+  padding-top: 25px;
+}
+li,
+h2 {
+  text-transform: uppercase;
+}
+
+li {
+  display: inline-block;
+  margin-right: 40px;
+  padding-bottom: 0.25em;
+  font-size: 1.3em;
+  position: relative;
+}
+
+li:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  border-bottom: 2px solid #ffffff;
+  transition: 0.4s;
+}
+
+.sign-btn {
+  cursor: pointer;
+}
+
+.sign-btn:hover:after {
+  width: 100%;
+}
+
+.sign-btn.active:after {
+  border-bottom: 3px solid #3366ff;
+  width: 100%;
+}
+
+/**** Form ****/
+
+.page {
+  opacity: 0;
+  z-index: -2;
+  position: absolute;
+  width: 100%;
+  padding-top: 70px;
+  transition: 0.5s;
+  overflow: hidden;
+}
+
+#sign-in-p {
+  right: 400px;
+}
+
+#sign-in-p.active,
+#sign-up-p.active {
+  right: 0;
+}
+
+#sign-up-p {
+  right: -400px;
+}
+
+.page.active {
+  opacity: 1;
+  z-index: 10;
+  right: 0;
+}
+
+.entry {
+  width: 100%;
+  height: 2.3em;
+  border-radius: 25px;
+  padding-left: 1em;
+}
+
+.entry {
+  background-color: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0);
+  transition: 0.6s;
+}
+
+.entry:focus {
+  background-color: rgba(196, 182, 224, 0.6);
+  border: 2px solid rgba(255, 255, 255, 1);
+  outline: 0;
+  transition: 0.6s;
+}
+
+.entry:hover {
+  background-color: rgba(196, 182, 224, 0.6);
+  transition: 0.6s;
+}
+
+.log-in-check {
+  padding-left: 1%;
+  cursor: pointer;
+}
+
+input[type="checkbox"]:checked {
+  background-color: #1161ed;
+}
+
+.submit {
+  width: 100%;
+  border-radius: 25px;
+  padding: 0.75em 0;
+  margin-top: 30px;
+  background-color: #1161ed;
+  border: none;
+  color: white;
+  font-weight: bold;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.submit:focus {
+  outline: 0;
+}
+
+.submit:active {
+  background-color: #0c49b3;
+}
