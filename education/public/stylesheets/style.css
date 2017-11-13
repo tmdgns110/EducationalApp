@@ -7,203 +7,258 @@ a {
   color: #00B7FF;
 }*/
 
-* {
+body{
+  font-family: 'Roboto', sans-serif;
+}
+header {
+font-family: Arial, Helvetica, sans-serif;
+background-color: #332;
+height: 100px;
+width: 100vw;
+margin-bottom: 5px;
+font-size: 20px;
+font-weight: bold;
+color: #FFF;
+text-align: center;
+padding-top: 25px;
+}
+
+nav {
+    width:100vw;height:30px;
+    background-color: #333;
+    margin: 0;
+    overflow: hidden;
+
+}
+nav ul{
+    margin: 0;
+    padding: 0;
+}
+nav ul li {
+    /* This allow us to arrange list items in a row, without using float */
+    display: inline-block;
+    list-style-type: none;
+}
+
+/* Create a style for the first level items */
+nav > ul > li > a {
+    color: #aaa;
+    background-color:#333;
+    display: block;
+    line-height: 1em;
+    padding: 0.5em 0.5em;
+    text-decoration: none;
+}
+table.type11 {
+    border-collapse: separate;
+    border-spacing: 1px;
+    text-align: center;
+    line-height: 1.5;
+    margin: 20px 10px;
+}
+table.type11 th {
+    /*width: 155px;*/
+    padding: 10px;
+    font-weight: bold;
+    vertical-align: top;
+    color: #aaa;
+    background: #333 ;
+}
+/*table.type11 tr td.1 {
+    width: 5px;
+    padding: 10px;
+    vertical-align: top;
+    border-bottom: 1px solid #ccc;
+    background: #eee;
+}*/
+/*table.type11 td {
+    width: 155px;
+    padding: 10px;
+    vertical-align: top;
+    border-bottom: 1px solid #ccc;
+    background: #eee;
+}*/
+
+
+article{width:100vw;height:70vh;}
+
+
+
+footer{
+   /*height:100px;*/
+  width:100vw;height:30px;margin-bottom:0;
+   }
+
+#center_footer{
+   background:#332;
+   height: 130px;
+   margin:0 auto;
+   }
+#left_footer,#right_footer {
+   width:450px;
+   padding:20px;
+   float:left;
+   }
+#left_footer b{
+   color:#aaa;
+   }
+#left_footer li{
+   float:left;
+   margin:0 20px;
+   }
+#left_footer img{
+   width:60px;
+   height:60px;
+   }
+#right_footer{
+   float:right;
+   }
+#right_footer a{
+   color:#aaa;
+   padding:0 10px;
+   line-height: 21px;
+   font-size: 13px;
+   font-weight:bold;
+   }
+/*#footer span{
+   color:#aaa;
+   font-size: 13px;
+   margin-left: 150px;
+   }*/
+
+.container{
+  /*border:1px solid white;*/
+  width: 600px;
+  height: 350px;
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+  display: inline-flex;
+}
+.backbox{
+  background-color: #404040;
+  width: 100%;
+  height: 80%;
+  position: absolute;
+  transform: translate(0,-50%);
+  top:50%;
+  display: inline-flex;
+}
+
+.frontbox{
+  background-color: white;
+  border-radius: 20px;
+  height: 100%;
+  width: 50%;
+  z-index: 10;
+  position: absolute;
+  right:0;
+  margin-right: 3%;
+  margin-left: 3%;
+  transition: right .8s ease-in-out;
+}
+
+.moving{
+  right:45%;
+}
+
+.loginMsg, .signupMsg{
+  width: 50%;
+  height: 100%;
+  font-size: 15px;
   box-sizing: border-box;
 }
 
-.wrapper {
-  height: 100%;
-  width: 100%;
+.loginMsg .title,
+.signupMsg .title{
+  font-weight: 300;
+  font-size: 23px;
 }
 
-.screen {
-  width: 450px;
-  height: 680px;
-  background: url(http://johnnycotton.me/codepen/001/bg.jpg) center center;
-  margin: 40px auto;
-  position: relative;
+.loginMsg p,
+.signupMsg p {
+  font-weight: 100;
 }
 
-#screen-right {
-  background: white;
-  height: 800px;
-  width: 450px;
-  position: absolute;
-  margin-top: -100px;
-  left: -100%;
-  z-index: 9999;
+.textcontent{
+  color:white;
+  margin-top:65px;
+  margin-left: 12%;
 }
 
-#screen-left {
-  background: white;
-  height: 800px;
-  width: 450px;
-  position: absolute;
-  margin-top: -100px;
-  right: -100%;
-  z-index: 9999;
+.loginMsg button,
+.signupMsg button {
+  background-color: #404040;
+  border: 2px solid white;
+  border-radius: 10px;
+  color:white;
+  font-size: 12px;
+  box-sizing: content-box;
+  font-weight: 300;
+  padding:10px;
+  margin-top: 20px;
 }
 
-.screen-overlay {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  opacity: 0.7;
-  background: linear-gradient(
-    135deg,
-    rgba(72, 35, 166, 1) 0%,
-    rgba(44, 0, 165, 1) 99%
-  );
-}
-
-.container {
-  padding: 90px 60px 45px 60px;
-}
-
-.main {
-  position: relative;
-  width: 100%;
-}
-
-.forgot {
-  border-top: 1px solid white;
+/* front box content*/
+.login, .signup{
+  padding: 20px;
   text-align: center;
-  margin-top: 80px;
 }
 
-li,
-h2,
-h3 {
-  color: white;
-  font-family: Arial, Helvetica, sans-serif;
-}
-h2 {
-  padding: 15px 5px;
-}
-h3 {
-  display: inline-block;
-  padding-top: 25px;
-}
-li,
-h2 {
-  text-transform: uppercase;
+.login h2,
+.signup h2 {
+  color: #333;
+  font-size:22px;
 }
 
-li {
-  display: inline-block;
-  margin-right: 40px;
-  padding-bottom: 0.25em;
-  font-size: 1.3em;
-  position: relative;
+.inputbox{
+  margin-top:30px;
+}
+.login input,
+.signup input {
+  display: block;
+  width: 100%;
+  height: 40px;
+  background-color: #f2f2f2;
+  border: none;
+  margin-bottom:20px;
+  font-size: 12px;
 }
 
-li:after {
-  content: "";
+.login button,
+.signup button{
+  background-color: #35B729;
+  border: none;
+  color:white;
+  font-size: 12px;
+  font-weight: 300;
+  box-sizing: content-box;
+  padding:10px;
+  border-radius: 10px;
+  width: 60px;
   position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0%;
-  border-bottom: 2px solid #ffffff;
-  transition: 0.4s;
-}
-
-.sign-btn {
+  right:30px;
+  bottom: 30px;
   cursor: pointer;
 }
 
-.sign-btn:hover:after {
-  width: 100%;
+/* Fade In & Out*/
+.login p {
+  cursor: pointer;
+  color:#404040;
+  font-size:15px;
 }
 
-.sign-btn.active:after {
-  border-bottom: 3px solid #3366ff;
-  width: 100%;
+.loginMsg, .signupMsg{
+  /*opacity: 1;*/
+  transition: opacity .8s ease-in-out;
 }
 
-/**** Form ****/
-
-.page {
+.visibility{
   opacity: 0;
-  z-index: -2;
-  position: absolute;
-  width: 100%;
-  padding-top: 70px;
-  transition: 0.5s;
-  overflow: hidden;
 }
 
-#sign-in-p {
-  right: 400px;
-}
-
-#sign-in-p.active,
-#sign-up-p.active {
-  right: 0;
-}
-
-#sign-up-p {
-  right: -400px;
-}
-
-.page.active {
-  opacity: 1;
-  z-index: 10;
-  right: 0;
-}
-
-.entry {
-  width: 100%;
-  height: 2.3em;
-  border-radius: 25px;
-  padding-left: 1em;
-}
-
-.entry {
-  background-color: rgba(255, 255, 255, 0.2);
-  border: none;
-  color: white;
-  border: 2px solid rgba(255, 255, 255, 0);
-  transition: 0.6s;
-}
-
-.entry:focus {
-  background-color: rgba(196, 182, 224, 0.6);
-  border: 2px solid rgba(255, 255, 255, 1);
-  outline: 0;
-  transition: 0.6s;
-}
-
-.entry:hover {
-  background-color: rgba(196, 182, 224, 0.6);
-  transition: 0.6s;
-}
-
-.log-in-check {
-  padding-left: 1%;
-  cursor: pointer;
-}
-
-input[type="checkbox"]:checked {
-  background-color: #1161ed;
-}
-
-.submit {
-  width: 100%;
-  border-radius: 25px;
-  padding: 0.75em 0;
-  margin-top: 30px;
-  background-color: #1161ed;
-  border: none;
-  color: white;
-  font-weight: bold;
-  transition: 0.2s;
-  cursor: pointer;
-}
-
-.submit:focus {
-  outline: 0;
-}
-
-.submit:active {
-  background-color: #0c49b3;
+.hide{
+  display: none;
 }
