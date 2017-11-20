@@ -24,26 +24,15 @@ router.get('/login',function(req, res, next) {
 });
 
 router.post('/signup', passport.authenticate('signup', {
-    successRedirect : '/profile',
-    failureRedirect : '/', //가입 실패시 redirect할 url주소
+    successRedirect : '/',
+    failureRedirect : '/login', //가입 실패시 redirect할 url주소
     failureFlash : true
 }))
 router.post('/login', passport.authenticate('login', {
-    successRedirect : '/profile',
-    failureRedirect : '/', //로그인 실패시 redirect할 url주소
+    successRedirect : '/',
+    failureRedirect : '/login', //로그인 실패시 redirect할 url주소
     failureFlash : true
 }))
 
-var passport = require('passport');
-router.post('/signup', passport.authenticate('signup', {
-    successRedirect : '/profile',
-    failureRedirect : '/', //가입 실패시 redirect할 url주소
-    failureFlash : true
-}))
-router.post('/login', passport.authenticate('login', {
-    successRedirect : '/profile',
-    failureRedirect : '/', //로그인 실패시 redirect할 url주소
-    failureFlash : true
-}))
 
 module.exports = router;
