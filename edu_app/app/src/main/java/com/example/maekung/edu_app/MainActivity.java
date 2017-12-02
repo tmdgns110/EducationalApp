@@ -1,19 +1,26 @@
 package com.example.maekung.edu_app;
 
+import android.content.Intent;
 import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        LinearLayout linearLayout = (LinearLayout)findViewById(R.id.entire);
+
+        linearLayout.setOnClickListener(this);
 
         ImageView plus = (ImageView)findViewById(R.id.plus);
         ImageView minus = (ImageView)findViewById(R.id.minus);
@@ -22,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
         plus.setImageResource(R.drawable.plus);
         minus.setImageResource(R.drawable.minus);
-       multiply.setImageResource(R.drawable.multiply);
+        multiply.setImageResource(R.drawable.multiply);
         divide.setImageResource(R.drawable.divide);
 
 
@@ -35,4 +42,15 @@ public class MainActivity extends AppCompatActivity {
         anim.setRepeatCount(Animation.INFINITE);
         myText.startAnimation(anim);
     }
+
+    public void onClick(View v){
+        switch(v.getId()){
+            case R.id.entire:
+                Intent intent = new Intent(this, loginActivity.class);
+                startActivity(intent);
+                finish();
+
+        }
+    }
+
 }
