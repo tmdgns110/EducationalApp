@@ -20,6 +20,29 @@ db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function (callback) {
     console.log("mongo DB connected...")
 });
+
+app.post('/post', (req, res) => {
+   console.log('who get in here post /users');
+   var inputData;
+
+   req.on('data', (data) => {
+     inputData = JSON.parse(data);
+   });
+
+   req.on('end', () => {
+     console.log("user_id : "+inputData.user_id + " , name : "+inputData.name);
+   });
+
+   res.write("OK!");
+   res.end();
+});
+
+app.listen(3000, () => {
+  console.log('Example app listening on port 3000!');
+});
+
+
+
 require('./config/passport')(passport);
 app.use(passport.initialize());
 app.use(passport.session()); //로그인 세션 유지
